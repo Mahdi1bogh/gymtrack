@@ -4,7 +4,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { Toaster } from "sonner";
-import { Header } from "@/components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,14 +22,11 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          <main className="flex justify-center items-center w-full">
-            <div className="max-w-4xl w-full">{children}</div>
-          </main>
+          <div>{children}</div>
           <Toaster />
         </ThemeProvider>
       </body>
